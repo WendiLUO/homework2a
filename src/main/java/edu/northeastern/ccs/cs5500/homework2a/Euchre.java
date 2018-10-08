@@ -1,20 +1,26 @@
 package edu.northeastern.ccs.cs5500.homework2a;
 
+import java.util.Map;
+
 public class Euchre extends Deck {
+	private static int EUCHRE_SIZE = 24;
 
-	public void cut(int cutPoint) {
-		// TODO Auto-generated method stub
-
-	}
-
-	public Card pullCard() {
-		// TODO Auto-generated method stub
-		return null;
+	public Euchre() {
+		for (Map.Entry<String, Integer> suitPair : suitMap.entrySet()) {
+			Suit suit = new Suit(suitPair.getKey(), (char) ((int) (suitPair.getValue()) + '0'));
+			for (int i = 9; i <= 10; i++) {
+				Rank rank = new Rank(String.valueOf(i), i);
+				cards.add(new Card(rank, suit));
+			}
+			for (Map.Entry<String, Integer> facePair : faceMap.entrySet()) {
+				Rank rank = new Rank(facePair.getKey(), 0);
+				cards.add(new Card(rank, suit));
+			}
+		}
 	}
 
 	public int officialSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		return EUCHRE_SIZE;
 	}
 
 }

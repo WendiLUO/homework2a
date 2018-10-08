@@ -9,6 +9,7 @@ public class AllTests {
 		TestSuite suite = new TestSuite(AllTests.class.getName());
 		//$JUnit-BEGIN$
 		suite.addTestSuite(CardTest.class);
+		suite.addTestSuite(DeckTest.class);
 		//$JUnit-END$
 		return suite;
 	}

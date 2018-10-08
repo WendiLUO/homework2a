@@ -1,20 +1,27 @@
 package edu.northeastern.ccs.cs5500.homework2a;
 
+import java.util.*;
+
 public class Standard extends Deck {
-
-	public void cut(int cutPoint) {
-		// TODO Auto-generated method stub
-
+	private static int STANDARD_SIZE = 52;
+	
+	public Standard() {
+		for(Map.Entry<String, Integer> suitPair: suitMap.entrySet()) {
+			Suit suit = new Suit(suitPair.getKey(),
+					(char)((int)(suitPair.getValue()) + '0'));
+			for(int i = 2; i <= 10; i++) {
+				Rank rank = new Rank(String.valueOf(i), i);
+				cards.add(new Card(rank, suit));
+			}
+			for (Map.Entry<String, Integer> facePair: faceMap.entrySet()) {
+				Rank rank = new Rank(facePair.getKey(), 0);
+				cards.add(new Card(rank, suit));
+			}
+		}
 	}
-
-	public Card pullCard() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	public int officialSize() {
-		// TODO Auto-generated method stub
-		return 0;
+		return STANDARD_SIZE;
 	}
 
 }

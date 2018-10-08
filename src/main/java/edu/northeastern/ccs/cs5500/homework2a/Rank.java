@@ -1,5 +1,4 @@
 package edu.northeastern.ccs.cs5500.homework2a;
-import java.util.*;
 
 public class Rank{
 	private String name;
@@ -25,7 +24,7 @@ public class Rank{
 			return false;
 		}
 		Rank other = (Rank) obj;
-		return other.getName() == name && other.pips == pips;
+		return other.getName().equals(name) && other.pips == pips;
 	}
 
 }

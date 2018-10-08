@@ -31,7 +31,7 @@ public class Hand {
 	}
 	
 	public void sort(String guidance) {
-		
+		CardSorter.sort(myCards, guidance);
 	}
 	
 	public void shuffle() {
