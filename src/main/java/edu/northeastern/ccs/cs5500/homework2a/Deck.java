@@ -86,4 +86,20 @@ public abstract class Deck {
 		}
 		return false;
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Deck)) {
+			return false;
+		}
+		Deck other = (Deck)obj;
+		for(int i=0; i<cards.size(); ++i) {
+			if (!cards.get(i).equals(other.cards.get(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	
 }
