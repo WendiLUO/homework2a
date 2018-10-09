@@ -86,6 +86,10 @@ public abstract class Deck {
 		}
 		return false;
 	}
+	
+	public int deckSize() {
+		return cards.size();
+	}
 
 	@Override
 	public boolean equals(Object obj) {
